@@ -8,17 +8,7 @@
   <title>Svelte Hamburger</title>
 </svelte:head>
 
-<section>
-  <AnimatedHamburger width="95vw" />
+<section class="flex flex-col items-center">
+  <AnimatedHamburger width="90vw" />
   <slot />
 </section>
-
-<style>
-  section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-  }
-</style>

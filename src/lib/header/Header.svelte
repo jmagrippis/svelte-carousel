@@ -8,10 +8,18 @@
   export let onClick = () => {
     open = !open
   }
+
+  let links = [
+    { href: 'https://magrippis.com/tube', name: 'Videos' },
+    { href: 'https://magrippis.com/blog', name: 'Blogposts' },
+    { href: 'https://magrippis.com/tube', name: 'Guides' },
+    { href: 'https://magrippis.com', name: 'Portfolio' },
+    { href: 'https://magrippis.com/milestones', name: 'Milestones' },
+  ]
 </script>
 
-<header>
-  <div class="main">
+<header class="text-primary">
+  <div class="flex justify-between">
     <div class="logo">
       <a href="https://kit.svelte.dev">
         <img src={logo} alt="SvelteKit" />
@@ -21,12 +29,13 @@
   </div>
 
   {#if open}
-    <nav transition:fly={{ y: -200, duration: 400 }}>
-      <a href="https://magrippis.com/tube">Videos</a>
-      <a href="https://magrippis.com/blog">Blogposts</a>
-      <a href="https://magrippis.com/tube">Guides</a>
-      <a href="https://magrippis.com/tube">Portfolio</a>
-      <a href="https://magrippis.com/milestones">Milestones</a>
+    <nav
+      class="absolute -z-10 w-full flex flex-col gap-2 items-center bg-background"
+      transition:fly={{ y: -200, duration: 400 }}
+    >
+      {#each links as { href, name }}
+        <a class="decoration-secondary" {href}>{name}</a>
+      {/each}
     </nav>
   {/if}
 </header>
@@ -35,14 +44,7 @@
   header {
     position: relative;
     font-size: 2rem;
-    color: var(--accent-color);
-    background-color: var(--white);
     z-index: 2;
-  }
-
-  .main {
-    display: flex;
-    justify-content: space-between;
   }
 
   .logo {
@@ -62,17 +64,5 @@
     width: 2em;
     height: 2em;
     object-fit: contain;
-  }
-
-  nav {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    background-color: var(--white);
   }
 </style>
