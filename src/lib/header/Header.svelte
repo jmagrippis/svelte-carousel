@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fly } from 'svelte/transition'
+  import {fly} from 'svelte/transition'
 
   import AnimatedHamburger from '$lib/AnimatedHamburger.svelte'
   import logo from './svelte-logo.svg'
@@ -10,11 +10,11 @@
   }
 
   let links = [
-    { href: 'https://magrippis.com/tube', name: 'Videos' },
-    { href: 'https://magrippis.com/blog', name: 'Blogposts' },
-    { href: 'https://magrippis.com/tube', name: 'Guides' },
-    { href: 'https://magrippis.com', name: 'Portfolio' },
-    { href: 'https://magrippis.com/milestones', name: 'Milestones' },
+    {href: 'https://magrippis.com/tube', name: 'Videos'},
+    {href: 'https://magrippis.com/blog', name: 'Blogposts'},
+    {href: 'https://magrippis.com/tube', name: 'Guides'},
+    {href: 'https://magrippis.com', name: 'Portfolio'},
+    {href: 'https://magrippis.com/milestones', name: 'Milestones'},
   ]
 </script>
 
@@ -30,8 +30,8 @@
 
   {#if open}
     <nav
-      class="absolute -z-10 w-full flex flex-col gap-2 items-center bg-background"
-      transition:fly={{ y: -200, duration: 400 }}
+      class="absolute -z-10 w-full flex flex-col gap-2 items-center bg-background pb-4"
+      transition:fly={{y: -200, duration: 400}}
     >
       {#each links as { href, name }}
         <a class="decoration-secondary" {href}>{name}</a>
