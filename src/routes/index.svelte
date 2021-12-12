@@ -1,5 +1,7 @@
 <script context="module" lang="ts">
+  import Card from '$lib/Card.svelte'
   import Carousel from '$lib/Carousel.svelte'
+  import {scrollIntoView} from '$lib/scrollIntoView'
 
   export const prerender = true
 
@@ -12,6 +14,7 @@
     {title: 'Working from Lisbon', src: '/images/lisbon.jpg'},
     {title: 'Christmas!', src: '/images/christmas.jpg'},
   ]
+  let items = images.map((props) => ({props, component: Card}))
 </script>
 
 <svelte:head>
@@ -19,6 +22,19 @@
 </svelte:head>
 
 <section class="flex flex-col items-center">
-  <Carousel {images} />
+  <Carousel {items} />
+
+  <nav>
+    <ul>
+      {#each images as { title }, i}
+        <li class="snap-center shrink-0">
+          <a
+            href={`#carousel-item-${i}`}
+            on:click|preventDefault={scrollIntoView}>{title}</a
+          >
+        </li>
+      {/each}
+    </ul>
+  </nav>
   <slot />
 </section>

@@ -1,42 +1,16 @@
 <script lang="ts">
-  type ImageType = {title: string; src: string}
-  export let images: ImageType[]
+  import type {SvelteComponent} from 'svelte/internal'
 
-  const scrollIntoView = ({target}) => {
-    const el = document.querySelector(target.getAttribute('href'))
-    if (!el) return
-    el.scrollIntoView({
-      behavior: 'smooth',
-    })
-  }
+  type Item = {props: Record<string, any>; component: SvelteComponent}
+  export let items: Item[]
 </script>
 
 <ul
-  class="relative w-full flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory"
+  class="flex overflow-x-auto gap-6 snap-x snap-mandatory mb-2 before:shrink-0 before:w-[30vw] after:shrink-0 after:w-[30vw]"
 >
-  {#each images as { title, src }, i}
-    <li id={`carousel-item-${i}`} class="snap-center shrink-0">
-      <img {title} {src} alt={title} />
+  {#each items as { props, component }, i}
+    <li id={`carousel-item-${i}`} class="shrink-0 snap-center">
+      <svelte:component this={component} {...props} />
     </li>
   {/each}
 </ul>
-
-<nav>
-  <ul>
-    {#each images as { title }, i}
-      <li class="snap-center shrink-0">
-        <a href={`#carousel-item-${i}`} on:click|preventDefault={scrollIntoView}
-          >{title}</a
-        >
-      </li>
-    {/each}
-  </ul>
-</nav>
-
-<style lang="postcss">
-  ul:before,
-  ul:after {
-    content: '';
-    @apply snap-center shrink-0 w-[30px];
-  }
-</style>

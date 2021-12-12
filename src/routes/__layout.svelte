@@ -11,6 +11,8 @@
 </main>
 
 <footer class="text-center text-lg">
-  <a href="https://magrippis.com/tube">magrippis.com/tube</a>
+  <a class="decoration-2" href="https://magrippis.com/tube"
+    >magrippis.com/tube</a
+  >
   <p>🧑‍💻 ^ More tutorials from Johnny ^ 👩‍💻</p>
 </footer>
