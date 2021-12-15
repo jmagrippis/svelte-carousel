@@ -2,7 +2,7 @@ const colors = require('tailwindcss/colors')
 
 const withOpacityValue =
   (varName) =>
-  ({ opacityValue }) =>
+  ({opacityValue}) =>
     opacityValue === undefined
       ? `hsl(
   var(--${varName}-hue),
@@ -24,6 +24,7 @@ module.exports = {
       secondary: withOpacityValue('secondary-color'),
       background: withOpacityValue('background-color'),
       text: withOpacityValue('text-color'),
+      white: withOpacityValue('white-color'),
       transparent: 'transparent',
       current: 'currentColor',
     },

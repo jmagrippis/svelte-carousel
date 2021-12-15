@@ -19,6 +19,10 @@
   --text-color-hue: 24;
   --text-color-saturation: 5%;
   --text-color-lightness: 25%;
+
+  --white-color-hue: 0;
+  --white-color-saturation: 0%;
+  --white-color-lightness: 100%;
 }
 
 html,
