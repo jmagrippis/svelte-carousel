@@ -25,10 +25,28 @@
   --white-color-lightness: 100%;
 }
 
-html,
-body,
-#svelte {
+html {
   height: 100%;
+  -webkit-font-smoothing: antialiased;
+  scroll-padding-top: var(--header-height);
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+@layer base {
+  body {
+    isolation: isolate;
+    justify-content: space-between;
+    @apply bg-background text-text;
+  }
+
+  a {
+    @apply font-semibold underline decoration-primary;
+  }
 }
 
 img,

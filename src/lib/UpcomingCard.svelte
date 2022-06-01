@@ -4,10 +4,10 @@
   export let src: string
 </script>
 
-<li {id} class="shrink-0 snap-center shadow-lg relative">
+<li {id} class="relative shrink-0 snap-center shadow-lg">
   <img {title} {src} alt={title} class="rounded" />
   <button
-    class="bg-secondary text-white px-4 py-2 semibold rounded absolute inset-x-2 bottom-2 shadow shadow-secondary"
+    class="semibold absolute inset-x-2 bottom-2 rounded bg-secondary px-4 py-2 text-white shadow shadow-secondary"
     >Upcoming... {title}!</button
   >
 </li>
