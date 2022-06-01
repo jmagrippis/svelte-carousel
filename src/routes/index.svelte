@@ -37,7 +37,7 @@
 
   <nav>
     <ul>
-      {#each images as { title }, index}
+      {#each items as { props: { title } }, index}
         <li>
           <a
             href={`#${getItemId(index)}`}

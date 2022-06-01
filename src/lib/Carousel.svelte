@@ -11,7 +11,6 @@
 
 <script lang="ts">
   export let items: Item[]
-  export let name = 'carousel'
 </script>
 
 <ul
