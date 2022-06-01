@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  import Carousel, {getItemId, Item} from '$lib/Carousel.svelte'
+  import Carousel, {getItemId, type Item} from '$lib/Carousel.svelte'
   import ReviewCard from '$lib/ReviewCard.svelte'
   import {scrollIntoView} from '$lib/scrollIntoView'
   import UpcomingCard from '$lib/UpcomingCard.svelte'
@@ -32,7 +32,7 @@
   <title>Svelte Carousel</title>
 </svelte:head>
 
-<section class="flex flex-col items-center">
+<section class="flex w-full flex-col items-center">
   <Carousel {items} />
 
   <nav>

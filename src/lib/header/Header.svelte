@@ -30,7 +30,7 @@
 
   {#if open}
     <nav
-      class="absolute -z-10 w-full flex flex-col gap-2 items-center bg-background pb-4"
+      class="absolute -z-10 flex w-full flex-col items-center gap-2 bg-background pb-4"
       transition:fly={{y: -200, duration: 400}}
     >
       {#each links as { href, name }}

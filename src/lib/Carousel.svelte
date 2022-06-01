@@ -14,7 +14,7 @@
 </script>
 
 <ul
-  class="flex overflow-x-auto gap-6 snap-x snap-mandatory before:shrink-0 before:w-[30vw] after:shrink-0 after:w-[30vw] pb-6"
+  class="flex w-full snap-x snap-mandatory gap-6 overflow-x-auto pb-6 before:w-[30vw] before:shrink-0 after:w-[30vw] after:shrink-0"
 >
   {#each items as { props, component }, index}
     <svelte:component this={component} id={getItemId(index)} {...props} />
