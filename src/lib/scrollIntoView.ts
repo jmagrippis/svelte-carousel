@@ -1,14 +1,16 @@
 export const scrollIntoView: svelte.JSX.EventHandler = ({currentTarget}) => {
-  const scrollToElement = document.querySelector(
-    currentTarget.getAttribute('href')
-  )
+  const link = currentTarget.getAttribute('href')
+  if (!link) return
+
+  const scrollToElement = document.querySelector(link)
 
   if (!scrollToElement) return
 
   const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
 
   scrollToElement.scrollIntoView({
-    block: 'nearest',
+    block: 'center',
+    inline: 'center',
     behavior: mediaQuery.matches ? 'auto' : 'smooth',
   })
 }

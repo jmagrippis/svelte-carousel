@@ -32,7 +32,7 @@
   <title>Svelte Carousel</title>
 </svelte:head>
 
-<section class="flex w-full flex-col items-center">
+<section class="container flex w-full flex-col items-center">
   <Carousel {items} />
 
   <nav>
